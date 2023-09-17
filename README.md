@@ -312,7 +312,7 @@ Das heißt unsere Methode wird aufgerufen wenn wird folgenden Link aufrufen:
 
 Jetzt können wir den Spaß testen.
 - Rufen wir erstmal einfach nur die Console auf und loggen uns ein, sind unsere Tabellen immernoch leer.
-- Rufen wir <https://localhost:8888/customers/fillCustomers> auf, sehen wir auf unserer Commandline schon passiert ist, checken wir jetzt nochmal die Tabelle sehen wir die Customer-Einträge.
+- Rufen wir <https://localhost:8888/customers/fillCustomers> auf, sehen wir schon auf unserer Commandline was passiert ist, checken wir jetzt nochmal die Tabelle in der h2-Console sehen wir die Customer-Einträge in der Tabelle.
 
 ## 4. Aufruf von HTML-Seiten mit Thymeleaf
 
@@ -421,18 +421,18 @@ Aufgeben XD
 ### Useful Maven Befehle
 
 - mvn spring-boot: run: Führt die Anwendung mit Berücksichtigung der application.properties aus. Setzt die Dependency des spring-boot-maven-plugin in der pom.xml voraus.
-- mvn clean: Löscht alle erstellten ARtefakte und Temp files im Projekt, "bereinigt" das Projekt.
+- mvn clean: Löscht alle erstellten Artefakte und Temp files im Projekt, "bereinigt" das Projekt.
 - mvn install: Kompiliert das Projekt, erstellt das Artefakt und kopiert es in das lokale Repository von Maven (~/.m2/repository). Andere Projekte können dann auf dieses Artefakt als Abhängigkeit zugreifen
 - mvn clean install: Kombination aus clean und install(wer hätte es gedacht). Löscht alle vorher erstellten Artefakte und kopiert das neu erstellte in das lokale Repository.
 - mvn compile: Kompiliert den Java-Code, grundlegender Schritt um Java-Code in Bytecode zu übersetzen
-- mvn dependency tree: Zeigt die ABhängigkeitsstruktur als tree. Hilft um zu verstehen welche Bibliotheken / Versionen verwendet werden
-- mvn test: Führt die Tests aus. Verwendet JUnit oder TestNG
+- mvn dependency tree: Zeigt die Abhängigkeitsstruktur als Tree. Hilft um zu verstehen welche Bibliotheken / Versionen verwendet werden
+- mvn test: Führt die Tests aus. Verwendet in der Regel JUnit / TestNG
 - mvn clean test: Kombination aus clean und test. Bereinigt das Projekt und führt die Tests aus.
 - mvn dependency:resolve: Löst Dependencies auf und checkt ob diese im Repository vorhanden sind. Guter Befehl um Dependencies zu downloaden ohne das gesamte Projekt zu erstellen.
 
 ### Error mit Test-Class: MOJO not found
 
-Erstmal einfach nur die ZMApplicationTests anpassen:
+Quick fix: Einfach nur die ZMApplicationTests anpassen:
 
 ````
 @SpringBootTest
