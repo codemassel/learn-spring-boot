@@ -11,6 +11,7 @@ Es ist ideal für die Erstellung von Microservices und bietet viele integrierte 
 Downloads:
 - [IntelliJ Download](https://www.jetbrains.com/idea/download/?section=windows) <- Achtung, Community Version auswählen!
 - [JDK Download](https://www.oracle.com/java/technologies/downloads/#jdk20-windows)
+- [Apache Maven](https://maven.apache.org/download.cgi)
 
 Die beste Methode ein Spring Boot Projekt zu erstellen ist über den [Spring Initializr.](https://start.spring.io/)
 
@@ -38,6 +39,39 @@ Klicke anschließend auf Generate (Oder Strg + Enter) um das Projekt herunterzul
 ## 3. Projekt-Struktur
 
 Die Projekt-Struktur eines Spring Boot Projekts sieht standardmäßig so aus:
+
 ![Screenshot](structure.png)
 
 In diese Beispiel ist MySpringBootApplication die Main-Klasse, application.properties eine Konfigurationsdatei und die pom.xml die Steuerungs-Datei für Maven.
+
+Wir nutzen diese Gelegenheit um in der application.properties die inmem-DB einzufügen.
+
+
+
+
+
+
+
+
+
+## Help, Tips & Tricks
+
+### Umgebungsvariable für Maven setzen:
+
+Windows:
+
+1. Download von [Apache Maven](https://maven.apache.org/download.cgi)
+2. Entpacke in einen beliebeigen Ordner, kopiere den Pfad als Text
+3. Rechtsklick auf Windows -> System -> Erweiterte Systemeinstellungen -> Umgebungsvariablen
+4. Unter Systemvariablen: Neue anlegen mit 
+   - Name: MAVEN_HOME (ja, alles groß)
+   - Value: vorher kopierte Pfad
+5. Unter Systemvariablen: PATH -> Bearbeiten -> Neu: %MAVEN_HOME%\bin eintragen
+
+Mac:
+Aufgeben XD
+
+### Useful Maven Befehle
+
+- Mvn clean install
+- 
