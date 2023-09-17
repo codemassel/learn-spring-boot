@@ -322,7 +322,19 @@ Wir wollen unseren Code so anpassen, dass unsere Kunden nicht nur in unserer Com
 
 Folgende Anpassungen sind nötig:
 
-Zuerst müssen wir unter main/resources/templates eine customers.html erstellen.
+**application.properties**
+
+Zuerst müssen wir eine weitere Dependency hinzufügen:
+````
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>3.1.3</version>
+		</dependency>
+````
+
+Außerdem müssen wir unter main/resources/templates eine customers.html erstellen: 
 
 **customers.html**
 

@@ -65,7 +65,7 @@ public class CustomerController {
         // Liste aller Kunden aus der Datenbank abrufen
         List<Customer> customers = customerService.getAllCustomers();
 
-        // Die Liste an das Model binden, um sie in der HTML-Seite anzuzeigen
+        // Die Liste an das Model binden, um sie in der HTML-Seite anzuzeigen, die Variable customers kann jetzt in der HTML file genutzt werden
         model.addAttribute("customers", customers);
 
         // Die HTML-Seite zum Anzeigen der Kundenliste anzeigen (customers.html)

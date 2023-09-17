@@ -6,16 +6,20 @@
 <body>
 <h1>customer list</h1>
 <table>
+    <thead>
     <tr>
         <th>ID</th>
         <th>Vorname</th>
         <th>Nachname</th>
     </tr>
+    </thead>
+    <tbody>
     <tr th:each="customer : ${customers}">
         <td th:text="${customer.id}"></td>
         <td th:text="${customer.vorname}"></td>
         <td th:text="${customer.nachname}"></td>
     </tr>
+    </tbody>
 </table>
 </body>
 </html>
