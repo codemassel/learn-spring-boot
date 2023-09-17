@@ -13,7 +13,7 @@ Downloads:
 - [JDK Download](https://www.oracle.com/java/technologies/downloads/#jdk20-windows)
 - [Apache Maven](https://maven.apache.org/download.cgi)
 
-Die beste Methode ein Spring Boot Projekt zu erstellen ist über den [Spring Initializr.](https://start.spring.io/)
+Die beste Methode ein Spring Boot Projekt zu erstellen ist über den Spring initializr. Also bitte öffnen: [Spring Initializr](https://start.spring.io/)
 
 ### Projektdaten 
 Wähle im Spring Initializr folgende Projektdaten:
@@ -42,14 +42,9 @@ Die Projekt-Struktur eines Spring Boot Projekts sieht standardmäßig so aus:
 
 ![Screenshot](structure.png)
 
-In diese Beispiel ist MySpringBootApplication die Main-Klasse, application.properties eine Konfigurationsdatei und die pom.xml die Steuerungs-Datei für Maven.
+In dem obigen Beispiel ist MySpringBootApplication die Main-Klasse, application.properties eine Konfigurationsdatei und die pom.xml die Steuerungs-Datei für Maven.
 
 Wir nutzen diese Gelegenheit um in der pom.xml einige Dependencies einzufügen, die wir später brauchen, ich zeige diesmal noch welche wir benötigen. Solltest du aber irgendwann selbstständig welche suchen, so kannst du auf
-
-<https://docs.spring.io/spring-boot/docs/current/reference/html/dependency-versions.html> 
-
-oder  <https://mvnrepository.com/> 
- selbst nachschauen.
 
 **application.properties**
 ```
@@ -66,6 +61,11 @@ oder  <https://mvnrepository.com/>
 		</dependency>
 		
 ```
+
+<https://docs.spring.io/spring-boot/docs/current/reference/html/dependency-versions.html> 
+
+oder  <https://mvnrepository.com/> 
+ selbst nachschauen.
 
 ### Application.properties
 
@@ -96,7 +96,7 @@ Da wir in der pom.xml die spring-boot-starter-data-jpa hinzugefügt haben, haben
 Diese können wir unter
 <localhost:8888/h2-console> aufrufen solange unsere Application "rennt". 
 
-**Führe im Terminal den Befehl mvn spring-boot:run aus und öffne die H2-console.**
+**Führe im Terminal den Befehl mvn spring-boot:run um die Anwendung zu starten aus und öffne die H2-console.**
 
 ### H2-Console
 
@@ -106,7 +106,7 @@ Passe folgende Felder wie in der application.properties an:
 - JDBC Url: jdbc:h2:mem:testdb
 - Password: geheim
 
-Teste anschließend die Connection, funktioniert alles connecte.
+Teste anschließend die Connection, funktioniert diese: connecte.
 
 Jetzt ist die Datenbank natürlich noch leer, jetzt kommt also der Part der Spaß macht.
 
@@ -165,7 +165,7 @@ Jetzt aber zur Spring Magic: Durch Anlegen eben eines simplen POJOs mit Getter u
 
 **Achtung: Die Getter und Setter sind wichtig, denn so führt Spring Boot, bzw Hibernate später die CRUD-Operationen / DB-Operationen aus.**
 
-Öffne die h2-Console und überprüfe ob der Table Customer erstellt wurde.
+**Starte die Anwendung neu, Öffne die h2-Console und überprüfe ob der Table Customer erstellt wurde.**
 
 ### Repository, Service, Controller
 
@@ -241,7 +241,9 @@ public class CustomerService {
 Hier taucht unser eben angelegtes CustomerRepository wieder auf. Die @Autowired-Annotation sgt Spring Boot wieder: Such in unserem Projekt nach den nötigen Beans (hier CustomerRepository).
 Übrigens: Die Dependency Injection durch den Constructor ist die sauberste Variante und sollte wo möglich immer genutzt werden.
 
-Wir haben hier einfach Methoden angelegt, die wir gleich im Controller verwenden werden, **der Service enthält immer die Business Logik.**
+Wir haben hier also nichts anderes gemacht alt Methoden angelegt, die wir gleich im Controller verwenden werden. 
+
+**Merke: der Service enthält immer die Business Logik.**
 
 #### **CustomerController.java**
 
@@ -302,13 +304,11 @@ public class CustomerController {
 }
 
 ````
-@RequestMapping("/customers") sagt nichts anderes, als das alles in dieser Klasse über die Standardurl + /customers passiert.
+@RequestMapping("/customers") bedeutet, dass alles in dieser Klasse über die Standardurl + /customers passiert.
 In unserem Fall also: <https://localhost:8888/customers>
 
 Wie du siehst ist eine ähnliche Notation aber nochmal über der fillCustomers-Methode, das bedeutet die Url wird nochmal erweitert.
-
-Das heißt unsere Methode wird aufgerufen wenn wird folgenden Link aufrufen:
-<https://localhost:8888/customers/fillCustomers>
+Hier also: <https://localhost:8888/customers/fillCustomers
 
 Jetzt können wir den Spaß testen.
 - Rufen wir erstmal einfach nur die Console auf und loggen uns ein, sind unsere Tabellen immernoch leer.
