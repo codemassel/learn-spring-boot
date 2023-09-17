@@ -1,6 +1,7 @@
 # learn-spring-boot
 
 In diesem Repository sind alle Grundlagen enthalten um mit Spring Webanwendungen zu erstellen.
+Achso und Hi Ehsan :^)
 
 ## 1. Was ist Spring boot?
 Spring Boot ein Framework, das die Entwicklung von Java-Anwendungen, insbesondere Webanwendungen, vereinfacht, indem es Konventionen und Standards verwendet, um den Entwicklungsprozess zu beschleunigen. 
