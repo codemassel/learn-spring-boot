@@ -398,6 +398,11 @@ Rufen wir jetzt also erst <https://localhost:8888/customers/fillCustomers> und a
 
 ## Help & Useful Information
 
+### Fehler nach Initialisierung des Projekts?
+
+1. Sind alle relevanten Sachen installiert? JDK, Maven, etc.?
+2. Den Target-Ordner löschen, mvn clean install ausführen
+
 ### Umgebungsvariable für Maven setzen:
 
 Windows:
@@ -430,10 +435,8 @@ Aufgeben XD
 Erstmal einfach nur die ZMApplicationTests anpassen:
 
 ````
-
 @SpringBootTest
 class ZmApplicationTests {
 
 }
-
 ````
