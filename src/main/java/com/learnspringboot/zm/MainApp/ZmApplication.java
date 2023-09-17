@@ -1,4 +1,4 @@
-package com.learnspringboot.zm;
+package com.learnspringboot.zm.MainApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
