@@ -59,7 +59,7 @@ public class CustomerController {
         customerCount = customerService.countCustomers();
         System.out.println("Jetzt gibt es also nur noch "+ customerCount + " Customers!");
 
-        // Weiterleitung zur Kundenliste-Seite
+        // Weiterleitung zur "Kundenliste"-Seite
         return "redirect:/customers/showCustomers";
     }
 
