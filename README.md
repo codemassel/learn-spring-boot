@@ -441,3 +441,12 @@ class ZmApplicationTests {
 
 }
 ````
+
+
+### FK Constraint verletzt:
+
+Wenn es nichts "einfaches" ist prüfen ob man die repository beider betroffenen Tabellen speichert.
+Beispiel: In der Tabelle Customer gibt es einen Foreign Key Zipcode, in der Tabelle CIties ist dies der PRimary Key, es muss NUR customerrepository gespeichert werden, NICHT CITIES, dies geschieht automatisch!
+
+### Probleme beim Inserten von daten:
+In der Annotation cascade = CASCADETYPE.ALL) ausprobieeren
