@@ -450,3 +450,10 @@ Beispiel: In der Tabelle Customer gibt es einen Foreign Key Zipcode, in der Tabe
 
 ### Probleme beim Inserten von daten:
 In der Annotation den Parameter (cascade = CASCADETYPE.ALL) ausprobieren
+
+### Sprnig legt IMMER einen neuen Record in der Child-Tabelle an, auch wenn es den Record eig schon gibt
+cascade = CASCADETYPE.MERGE in der "ownenden" Entity probieren
+
+### Not-null property references a transient value - transient instance must be saved before current operation
+Heißt eig: Die Child-Entity auf die du dich berufst gibt es noch nicht. Bei einem Object mit mehreren Verweisen undeinander also auf die Reihenfolge achten, Beispiel bei dem "poker-projekt":
+PlayerService -> PlayerCard und PlayerRoom, hier musste die Card VOR dem Room gesetzt werden, weil der Room sich auch auf die Card bezieht.
