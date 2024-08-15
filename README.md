@@ -45,9 +45,9 @@ Die Projekt-Struktur eines Spring Boot Projekts sieht standardmäßig so aus:
 
 In dem obigen Beispiel ist MySpringBootApplication die Main-Klasse, application.properties eine Konfigurationsdatei und die pom.xml die Steuerungs-Datei für Maven.
 
-Wir nutzen diese Gelegenheit um in der pom.xml einige Dependencies einzufügen, die wir später brauchen, ich zeige diesmal noch welche wir benötigen. Solltest du aber irgendwann selbstständig welche suchen, so kannst du auf
+Wir nutzen diese Gelegenheit um in der pom.xml einige Dependencies einzufügen, die wir später brauchen, ich zeige diesmal noch welche wir benötigen. 
 
-**application.properties**
+**pom.xml**
 ```
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,7 +62,7 @@ Wir nutzen diese Gelegenheit um in der pom.xml einige Dependencies einzufügen, 
 		</dependency>
 		
 ```
-
+Solltest du aber irgendwann selbstständig welche suchen, so kannst du auf
 <https://docs.spring.io/spring-boot/docs/current/reference/html/dependency-versions.html> 
 
 oder  <https://mvnrepository.com/> 
@@ -72,9 +72,6 @@ oder  <https://mvnrepository.com/>
 
 Wie schon erwähnt ist die application.properties im resources-Ordner die **Konfigurationsdatei von Spring.**
 Hier können wir z.B. den Localhost-Port ändern oder die DB-Daten angeben.
-
-
-**Application.properties:**
 
 ```
 # General Configuration
@@ -91,9 +88,10 @@ spring.datasource.username=sa
 spring.datasource.password=geheim
 ```
 
-In diesem Beispiel wird also der Default LocalHost-Port von 8080 auf 8888 geändert, eine h2-inMem-Datase mit Login-Details mitgeteilt.
+In diesem Beispiel wird also der Default LocalHost-Port von 8080 auf 8888 geändert, eine h2-inMem-Datase konfiguriert und Login-Details mitgeteilt.
+Im Realfall sollten die Connect-Daten natürlich nicht einfach hier stehen und auch keine inMem-Datenbank genutzt werden.
 
-Da wir in der pom.xml die spring-boot-starter-data-jpa hinzugefügt haben, haben wir die h2-Console enabled. 
+Durch Hinzufügen der spring-boot-starter-data-jpa in der pom.xml haben wir die h2-Console enabled. 
 Diese können wir unter
 <localhost:8888/h2-console> aufrufen solange unsere Application "rennt". 
 
